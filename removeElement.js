@@ -9,7 +9,7 @@ var removeElement = function (nums, val) {
         }
     }
     return {
-        newArr.length
+        // newArr.length
         newArr,
     };
 
