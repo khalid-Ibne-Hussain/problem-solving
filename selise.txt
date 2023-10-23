@@ -1,0 +1,57 @@
+Recursion Challenge
+Have the function RecursionChallenge(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
+Once your function is working, take the final output string and intersperse it character-by-character with your ChallengeToken.
+
+Your ChallengeToken: ojb917aiwd
+Examples
+Input: 4
+Output: 24
+Final Output: 2o4jb917aiwd
+Input: 8
+Output: 40320
+Final Output: 4o0j3b29017aiwd
+
+function RecursionChallenge(num) { 
+
+  // code goes here  
+  const token = "ojb917aiwd";
+  let finalOutput = "";
+
+  if(num===0){
+    return 1;
+  }
+  else{
+    const fact =  num*RecursionChallenge(num-1);
+
+    const value = fact.toString();
+
+    // const value = factString.split("").join(" ");
+    // const value = factString;
+    console.log(value)
+
+    // for (let i=0; i < Math.max(token.length,value.length); i++){
+    for (let i=0; i < token.length; i++){
+
+      // console.log(value);
+      if(i<value.length){
+        finalOutput += value[i];
+      }
+      if(i<token.length){
+        finalOutput += token[i];
+      }
+    }
+
+    // console.log(typeof factString);
+    return finalOutput;
+
+    // return value;
+    // return fact;
+    return factString;
+
+  }
+  
+
+}
+
+console.log(RecursionChallenge(4));
+   
