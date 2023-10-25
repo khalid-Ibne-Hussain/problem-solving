@@ -9,6 +9,7 @@ const RecursionFactorial = (num) => {
             return value;
         }
     }
+    console.log(factorial(num));
 
     // add token with the value
 
@@ -16,14 +17,18 @@ const RecursionFactorial = (num) => {
     const value = factorial(num).toString();
 
     // concat token with the value
-    const valueWithToken = value + "_" + token;
+    const valueWithToken = value + token;
 
-    return valueWithToken;
+    // concat and then replace every 2nd char with _
+    let value2Array = valueWithToken.split("");
+    for (let i = 2; i < valueWithToken.length; i += 3) {
+        value2Array[i] = "_";
+    }
+
+    return value2Array.join("");
 
 
 }
 
-
-
-const num = 4;
+const num = 8;
 console.log(RecursionFactorial(num));
